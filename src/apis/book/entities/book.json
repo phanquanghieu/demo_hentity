@@ -1,0 +1,37 @@
+{
+  "type": "collection",
+  "tableName": "books",
+  "singularName": "book",
+  "pluralName": "books",
+  "displayName": "Book",
+  "attributes": [
+    {
+      "type": "string",
+      "columnName": "name",
+      "displayName": "Name"
+    },
+    {
+      "type": "integer",
+      "columnName": "price",
+      "displayName": "Price"
+    },
+    {
+      "type": "file",
+      "columnName": "image",
+      "displayName": "Image",
+      "relation": "oneToMany",
+      "association": "belongsTo",
+      "reference": "file"
+    },
+    {
+      "type": "relation",
+      "columnName": "author",
+      "displayName": "Author",
+      "relation": "oneToMany",
+      "association": "belongsTo",
+      "reference": "author",
+      "referenceColumnName": "books",
+      "referenceDisplayName": "Books"
+    }
+  ]
+}
